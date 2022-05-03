@@ -10,6 +10,7 @@ console.log(fib(8))
 //first two numbers start at a:0,b:1
 //theseare added together over N iterations
 //
+//0112358 13 21
 const fibBest = (n, a = 0, b = 1) => {
     console.log(`n:${n},a:${a},b:${b}`)
     if(n == 1) return b; //running total of adding a + b 
