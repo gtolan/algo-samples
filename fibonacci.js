@@ -12,4 +12,4 @@ const fibBest = (n, a = 0, b = 1) => {
     if(n == 0) return a;
     return fibBest(n - 1, b, a + b)
 }
-console.log(fibBest(8)); 
+console.log(fibBest(7)); 
