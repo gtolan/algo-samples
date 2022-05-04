@@ -26,30 +26,22 @@ SinglyLinkedList.prototype.insertNode = function (data) {
 };
 
 SinglyLinkedList.prototype.deleteByValue = function (val) {
-  //10
-   
     let currentHead = this.head;
-    // console.log(currentHead);
-    // console.log(currentHead.next)
-    //  console.log(currentHead.next.next);
-    // if (currentHead.next === null) return currentHead;
     while (currentHead.next) {
+        let prev = currentHead;
         currentHead = currentHead.next;
-        if(currentHead === val){
-                    let matchedHead = currentHead.next;
-                    let afterMatchedNext = matchedHead.next;
-                    this.head.next = afterMatchedNext;
+        if(currentHead.data === val){
+                    let afterMatchedNext = currentHead.next;
+                    prev.next = afterMatchedNext;
                     this.size--;
         }
-        console.log("ch", currentHead);
     }
-
-
-    // if (currentHead.next.data == val) {
-
-   // }
    
 };
+SinglyLinkedList.prototype.removeHead = function () {
+    let next = this.head.next;
+    this.head = next;
+}
 
 const LL = new SinglyLinkedList();
 LL.insertNode(2);
@@ -57,5 +49,6 @@ LL.insertNode('z');
 LL.insertNode('w');
 LL.insertNode(4);
 LL.insertNode('19');
-LL.deleteByValue('w');
+LL.deleteByValue(4);
+LL.removeHead()
 console.log(LL.getFirst());
