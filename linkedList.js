@@ -50,5 +50,6 @@ LL.insertNode('w');
 LL.insertNode(4);
 LL.insertNode('19');
 LL.deleteByValue(4);
-LL.removeHead()
+LL.removeHead();
+
 console.log(LL.getFirst());
