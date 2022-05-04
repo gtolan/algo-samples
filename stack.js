@@ -1,4 +1,4 @@
-//Add, Remove, Peek, getNth
+//Add, Remove, Peek, getNth, Peek
 function Stack (start = []){
     this.stack = [...start];
 }

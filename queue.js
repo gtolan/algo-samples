@@ -1,13 +1,18 @@
+//Enqueue, Dequeue, getNth, Is Empty, Peek
 function Queue(){
     this.queue = [];
     this.size = 0;
 }
-
-Queue.prototype.add = function(el){
+Queue.prototype.isEmpty = function(){
+    if(this.size === 0 && this.queue.length == 0) return true;
+}
+Queue.prototype.enqueue = function(el){
     this.queue.push(el);
     this.size++;
 }
-
+Queue.prototype.peek = function(){
+    return this.queue[0]
+}
 Queue.prototype.getBuffer = function(nth){
     return [...this.queue];
 }
@@ -21,17 +26,18 @@ Queue.prototype.getNth = function (nth) {
   }
   return buffer[0];
 };
-Queue.prototype.remove = function(){
+Queue.prototype.dequeue = function(){
     let buffer = this.getBuffer();
         buffer.shift();
     this.queue = [...buffer];
     this.size--;
 }
 let Q = new Queue();
-Q.add('Jack');
-Q.add("Jill");
-Q.add("Billy");
-Q.add("Bob");
-Q.remove();
+console.log(Q.peek())
+Q.enqueue('Jack');
+Q.enqueue("Jill");
+Q.enqueue("Billy");
+Q.enqueue("Bob");
+Q.dequeue();
 console.log(Q.queue);
 console.log(Q.getNth(2));
